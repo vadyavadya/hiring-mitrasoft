@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header {
+    margin-bottom: 80px;
+}
+.main {
+    flex-grow: 1;
+}
+.footer {
+    padding: 10px;
+    text-align: right;
+}
+
+.header-title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.header-title__img {
+    flex: 0 1 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header-title__img img {
+    width: 100%;
+}
+.header-title__info {
+}
+.header-title__name {
+}
+.header-title__mail {
+}
+.header-title__mail a {
+    text-decoration: none;
+}
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+.active {
+    color: royalblue;
+}
