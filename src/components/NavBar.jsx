@@ -10,7 +10,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 export const NavBar = () => {
     return (
         <Navbar key={false} bg="light" expand={false} className="mb-3">
-            <Container fluid>
+            <Container fluid='xl'>
                 {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
                 <Navbar.Offcanvas
