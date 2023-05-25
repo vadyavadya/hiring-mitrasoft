@@ -8,6 +8,7 @@ import {
 import { MainPage } from "./main-pages/MainPage";
 import { ErrorPages } from "../pages/ErrorPages";
 import { Posts } from "./posts/Posts";
+import { UserInfo } from "./UserInfo";
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
                     {
                         index: true,
                         element: <Posts />
+                    },
+                    {
+                        path: 'user/:id',
+                        element: <UserInfo />,
                     },
                     {
                         path: '*',

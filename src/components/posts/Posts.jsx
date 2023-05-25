@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {  getPosts } from "../../store/postsSlice";
+import { getPosts } from "../../store/postsSlice";
 import { Link } from "react-router-dom";
-import {  Card, Container, Image, Stack  } from "react-bootstrap";
+import { Card, Container, Image, Stack } from "react-bootstrap";
 import Loader from "../Loader";
 import cls from './posts.module.css'
 import { Comments } from "../Comments";
@@ -19,6 +19,7 @@ export const Posts = () => {
 
     return (
         <Container fluid='xl' >
+
             {posts.error && <h2>{posts.error}</h2>}
 
             <Stack gap={5}>
