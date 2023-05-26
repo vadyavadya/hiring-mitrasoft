@@ -7,6 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
+import ingAvat from "../imgs/my.jpg"
+
 export const NavBar = () => {
 
     const [show, setShow] = useState(false);
@@ -31,7 +33,7 @@ export const NavBar = () => {
                             <div className="header-title">
                                 <div className="header-title__img">
                                     <Link to='/about'>
-                                        <img src="/imgs/my.jpg" alt="Фото человека" />
+                                        <img src={ingAvat} alt="Фото человека" />
                                     </Link>
                                 </div>
 

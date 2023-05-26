@@ -1,10 +1,16 @@
 import React from "react";
 
-import { Card,  Col, Container, Image, Row } from "react-bootstrap";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
+
+import imgRezum from "../imgs/for-rezume.jpg";
+import imgChik from "../imgs/chik-chik.png";
+import imgTree from "../imgs/chritmas-tree.png";
+import imgFit from "../imgs/fitness.png";
+import imgGer from "../imgs/gerich.png";
 
 
 export const About = () => {
@@ -17,7 +23,7 @@ export const About = () => {
                         <Row xs={1} sm={2}  >
                             <Col lg={2} xs={4}>
                                 <AnimationOnScroll animateIn="animate__pulse">
-                                    <Image src="/imgs/for-rezume.jpg" thumbnail />
+                                    <Image src={imgRezum} thumbnail />
                                 </AnimationOnScroll>
                             </Col>
 
@@ -134,20 +140,19 @@ export const About = () => {
 
                         <Row xs={1} md={2} lg={4} className="mb-3">
                             <Col>
-                                <a href="https://vadyavadya.github.io/chik-chik" target="_blank" rel="noreferrer"><Image src="/imgs/chik-chik.png" rounded fluid alert="картинка сайта chik-chik" /></a>
+                                <a href="https://vadyavadya.github.io/chik-chik" target="_blank" rel="noreferrer"><Image src={imgChik} rounded fluid alert="картинка сайта chik-chik" /></a>
                             </Col>
 
                             <Col>
-                                <a href="https://vadyavadya.github.io/web_stady/flsStartTemplate_gerich/dist/home.html" target="_blank" rel="noreferrer"><Image src="/imgs/gerich.png" rounded fluid alert="картинка сайта ресторана герич" /></a>
+                                <a href="https://vadyavadya.github.io/web_stady/flsStartTemplate_gerich/dist/home.html" target="_blank" rel="noreferrer"><Image src={imgGer} rounded fluid alert="картинка сайта ресторана герич" /></a>
                             </Col>
 
                             <Col>
-                                <a href="https://vadyavadya.github.io/web_stady/fitness-traiiner/dist/home.html" target="_blank" rel="noreferrer"><Image src="/imgs/fitness.png" rounded fluid alert="картинка сайта trainer fitness" /></a>
+                                <a href="https://vadyavadya.github.io/web_stady/fitness-traiiner/dist/home.html" target="_blank" rel="noreferrer"><Image src={imgFit} rounded fluid alert="картинка сайта trainer fitness" /></a>
                             </Col>
 
                             <Col>
-                                <a href="https://vadyavadya.github.io/christmas-trees" target="_blank" rel="noreferrer"><Image src="/imgs/chritmas-tree.png" rounded fluid alert="картинка сайта продажи елок" /></a>
-
+                                <a href="https://vadyavadya.github.io/christmas-trees" target="_blank" rel="noreferrer"><Image src={imgTree} rounded fluid alert="картинка сайта продажи елок" /></a>
                             </Col>
                         </Row>
 

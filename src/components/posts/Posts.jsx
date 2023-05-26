@@ -7,6 +7,8 @@ import Loader from "../Loader";
 import cls from './posts.module.css'
 import { Comments } from "../Comments";
 
+import imgAvatar from "../../imgs/avatar.jpg"
+
 
 
 export const Posts = () => {
@@ -34,7 +36,7 @@ export const Posts = () => {
                             <Card.Header >
                                 <Link to={`/user/${post.userId}`}>
                                     <div className={cls.avatar}>
-                                        <Image className={cls.avatarImage} src="imgs/avatar.jpg" alt="" />
+                                        <Image className={cls.avatarImage} src={imgAvatar} alt="" />
                                     </div>
                                 </Link>
                             </Card.Header>
