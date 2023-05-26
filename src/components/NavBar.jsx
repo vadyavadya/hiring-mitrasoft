@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -8,15 +8,23 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export const NavBar = () => {
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     return (
         <Navbar key={false} bg="light" expand={false} className="mb-3">
             <Container fluid='xl'>
-                {/* <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand> */}
-                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} />
+                <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} onClick={handleShow} />
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-${false}`}
                     aria-labelledby={`offcanvasNavbarLabel-expand-${false}`}
                     placement="start"
+                    show={show}
+                    onHide={handleClose}
                 >
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${false}`}>

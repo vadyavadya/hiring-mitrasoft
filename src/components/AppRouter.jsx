@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
 } from "react-router-dom";
 
@@ -9,9 +9,10 @@ import { MainPage } from "./main-pages/MainPage";
 import { ErrorPages } from "../pages/ErrorPages";
 import { Posts } from "./posts/Posts";
 import { UserInfo } from "./UserInfo";
+import { About } from "../pages/About";
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <MainPage />,
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
                     {
                         path: 'user/:id',
                         element: <UserInfo />,
+                    },
+                    {
+                        path: 'about',
+                        element: <About />,
                     },
                     {
                         path: '*',

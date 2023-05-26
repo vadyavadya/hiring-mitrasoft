@@ -16,7 +16,7 @@ export const MainPage = () => {
             </main>
             <footer className="footer">
                 <div className="container">
-                    Vadim Sergeev
+                    Vadim Sergeev 2023
                 </div>
             </footer>
         </div>
