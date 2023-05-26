@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hiring-mitrasoft/static/css/main.06b82855.css",
+    "main.js": "/hiring-mitrasoft/static/js/main.847c7309.js",
+    "static/js/787.6da281ed.chunk.js": "/hiring-mitrasoft/static/js/787.6da281ed.chunk.js",
+    "index.html": "/hiring-mitrasoft/index.html",
+    "main.06b82855.css.map": "/hiring-mitrasoft/static/css/main.06b82855.css.map",
+    "main.847c7309.js.map": "/hiring-mitrasoft/static/js/main.847c7309.js.map",
+    "787.6da281ed.chunk.js.map": "/hiring-mitrasoft/static/js/787.6da281ed.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06b82855.css",
+    "static/js/main.847c7309.js"
+  ]
+}
