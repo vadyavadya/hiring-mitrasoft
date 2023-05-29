@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
-import { Button, Card, Container, ListGroup, Stack } from "react-bootstrap";
+import { Button, Card, Container,  Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../store/postsSlice";
+import { UserCard } from "../components/UserCard";
+import { PostList } from "../components/PostList";
 
 export const UserInfo = () => {
     const params = useParams();
@@ -37,50 +39,40 @@ export const UserInfo = () => {
         // eslint-disable-next-line
     }, [])
 
+    let userPosts = posts.posts.filter((post) => post.userId === +params.id);
+
     return (
         <Container>
-            <Button variant="secondary" onClick={() => navigate(-1)}>Назад</Button>
+            <div className="mb-5 text-end">
+                <Button variant="secondary" onClick={() => navigate(-1)}>Назад</Button>
+            </div>
+
             {
                 userInf.isLoading &&
                 <Loader />
             }
             {
+                userInf.error &&
+                userInf.error
+            }
+            {
                 userInf?.name &&
-                <div>
-                    <h2>{userInf.name}</h2>
-                    <ListGroup className="mb-3">
-                        <ListGroup.Item> <strong>Имя пользователя:</strong> {userInf.username}</ListGroup.Item>
-                        <ListGroup.Item> <strong>Почта:</strong> {userInf.email}</ListGroup.Item>
-                        <ListGroup.Item> <strong>Адрес:</strong> {userInf.address.city}, {userInf.address.street}, {userInf.address.suite}, {userInf.address.zipcode}</ListGroup.Item>
-                        <ListGroup.Item> <strong>Телефон:</strong> {userInf.phone}</ListGroup.Item>
-                    </ListGroup>
+                <Stack gap={3}>
+                    <UserCard userInf={userInf} />
+
                     <Card>
                         <Card.Body>
                             <Card.Title>Посты пользователя</Card.Title>
 
-                            <Stack gap={2}>
-                                {
-                                    posts.posts.filter((post) => post.userId === +params.id).map((post) => {
-                                        return (
-                                            <Card key={post.id}>
-                                                <Card.Body>
-                                                    <Card.Title>{post.title}</Card.Title>
-                                                    <Card.Text>{post.body}</Card.Text>
-                                                </Card.Body>
-                                            </Card>
-                                        )
-                                    })
-                                }
-                            </Stack>
+
+                            <PostList posts={userPosts} />
+
 
                         </Card.Body>
                     </Card>
-                </div>
+                </Stack>
             }
-            {
-                userInf.error &&
-                userInf.error
-            }
+
         </Container >
     )
 }

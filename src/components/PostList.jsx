@@ -7,9 +7,9 @@ export const PostList = ({ posts }) => {
     return (
         <Stack gap="5">
             {
-                posts.map((post, index) => {
+                posts.map((post) => {
                     return (
-                        <PostItem key={post.id} post={post} indexPost={index} />
+                        <PostItem key={post.id} post={post}/>
                     );
                 })
             }

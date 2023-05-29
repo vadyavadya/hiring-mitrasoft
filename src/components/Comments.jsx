@@ -1,26 +1,22 @@
 import React from "react";
-import { Accordion, Button, Card, useAccordionButton } from "react-bootstrap";
+import { Accordion, Button, Card, Stack, useAccordionButton } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import Loader from "./Loader";
 import { getCommentsId } from "../store/postsSlice";
 
-export const Comments = ({ post, index }) => {
+export const Comments = ({ post }) => {
     const dispatch = useDispatch();
 
-    const toggleShowComment = (id, index, comment) => {
-        if (!comment) dispatch(getCommentsId({ id, index }));
-    };
-
-    function CustomToggle({ children, eventKey, post, indexPost }) {
+    function CustomToggle({ children, eventKey, post }) {
         const decoratedOnClick = useAccordionButton(eventKey, () => {
-            toggleShowComment(post.id, indexPost, post.comment.comments.length !== 0);
+            if (post.comment.comments.length === 0) dispatch(getCommentsId({ id: post.id }));
         }
         );
 
         return (
             <Button
                 type="button"
-                className='mb-1'
+                className='mb-3'
                 onClick={() => decoratedOnClick()}
             >
                 {children}
@@ -30,38 +26,44 @@ export const Comments = ({ post, index }) => {
 
     return (
         <Accordion >
-            <CustomToggle eventKey="0" post={post} indexPost={index}>Go comments</CustomToggle>
+            <CustomToggle eventKey="0" post={post}>Go comments</CustomToggle>
             <Accordion.Collapse eventKey="0">
                 <Card>
-                    <Card.Body><h6>Comments:</h6></Card.Body>
-                    {
-                        post.comment.status === 'loading' &&
-                        <Card.Body>
-                            <Loader />
-                        </Card.Body>
-                    }
+                    <Card.Body>
+                        <Card.Title>Comments:</Card.Title>
 
-                    {
-                        post.comment.status === 'succeeded' &&
-                        post.comment.comments.map((comment) => {
-                            return (
-                                <Card.Body key={comment.id}>
-                                    <Card>
-                                        <Card.Body>
-                                            <Card.Title>{comment.email}</Card.Title>
-                                            <Card.Text>{comment.body}</Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </Card.Body>
-                            )
-                        })
-                    }
-                    {
-                        post.comment.status === 'error' &&
-                        <Card.Body>
-                            {post.comment.comments}
-                        </Card.Body>
-                    }
+                        {
+                            post.comment.status === 'loading' &&
+                            <Loader />
+                        }
+
+
+                        {
+                            post.comment.status === 'succeeded' &&
+                            <Stack gap={2}>
+                                {
+                                    post.comment.comments.map((comment) => {
+                                        return (
+
+                                            <Card key={comment.id}>
+                                                <Card.Body>
+                                                    <Card.Title>{comment.email}</Card.Title>
+                                                    <Card.Text>{comment.body}</Card.Text>
+                                                </Card.Body>
+                                            </Card>
+                                        )
+                                    })
+                                }
+                            </Stack>
+                        }
+
+
+                        {
+                            post.comment.status === 'error' &&
+                            post.comment.comments
+                        }
+
+                    </Card.Body>
                 </Card>
             </Accordion.Collapse>
         </Accordion>

@@ -23,7 +23,6 @@ export const PostItem = ({ post, indexPost }) => {
                 <Card.Text>
                     {post.body}
                 </Card.Text>
-
                 <Comments post={post} index={indexPost} />
             </Card.Body>
         </Card>

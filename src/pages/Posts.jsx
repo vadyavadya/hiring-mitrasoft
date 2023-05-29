@@ -15,8 +15,9 @@ export const Posts = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getPosts());
-    }, [dispatch])
+        if (posts.posts.length === 0) dispatch(getPosts());
+        // eslint-disable-next-line
+    }, [])
 
     return (
         <Container fluid='xl' >

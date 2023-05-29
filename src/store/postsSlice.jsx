@@ -11,11 +11,11 @@ export const getPosts = createAsyncThunk('posts/getPosts', async () => {
     return data;
 })
 
-export const getCommentsId = createAsyncThunk('posts/getCommentsId', async ({ id, index }) => {
+export const getCommentsId = createAsyncThunk('posts/getCommentsId', async ({ id }) => {
 
     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
     let res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
-    return { data: res.data, id, index };
+    return { data: res.data, id };
 })
 
 export const postsSlice = createSlice({
@@ -41,15 +41,18 @@ export const postsSlice = createSlice({
             state.error = action.error.message;
         })
         builder.addCase(getCommentsId.pending, (state, action) => {
-            state.posts[action.meta.arg.index].comment.status = 'loading';
+            let index = state.posts.findIndex((post) => post.id === action.meta.arg.id);
+            state.posts[index].comment.status = 'loading';
         })
         builder.addCase(getCommentsId.fulfilled, (state, action) => {
-            state.posts[action.payload.index].comment.comments = [...action.payload.data];
-            state.posts[action.payload.index].comment.status = 'succeeded';
+            let index = state.posts.findIndex((post) => post.id === action.meta.arg.id);
+            state.posts[index].comment.comments = [...action.payload.data];
+            state.posts[index].comment.status = 'succeeded';
         })
         builder.addCase(getCommentsId.rejected, (state, action) => {
-            state.posts[action.meta.arg.index].comment.status = 'error';
-            state.posts[action.meta.arg.index].comment.comments = action.error.message;
+            let index = state.posts.findIndex((post) => post.id === action.meta.arg.id)
+            state.posts[index].comment.status = 'error';
+            state.posts[index].comment.comments = action.error.message;
         })
     }
 })
