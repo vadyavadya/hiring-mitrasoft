@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Loader from "./Loader";
+import Loader from "../components/Loader";
 import { Button, Card, Container, ListGroup, Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../store/postsSlice";

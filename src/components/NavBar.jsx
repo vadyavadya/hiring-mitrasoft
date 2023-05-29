@@ -18,7 +18,7 @@ export const NavBar = () => {
 
 
     return (
-        <Navbar key={false} bg="light" expand={false} className="mb-3">
+        <Navbar key={false} bg="light" expand={false} >
             <Container fluid='xl'>
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${false}`} onClick={handleShow} />
                 <Navbar.Offcanvas

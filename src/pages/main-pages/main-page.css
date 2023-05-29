@@ -9,7 +9,6 @@
     min-height: 100vh;
 }
 .header {
-    margin-bottom: 40px;
 }
 .main {
     flex-grow: 1;

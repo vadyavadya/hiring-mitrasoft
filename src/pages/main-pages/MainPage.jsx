@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import './main-page.css'
-import { NavBar } from "../NavBar";
+import { NavBar } from "../../components/NavBar";
 
 
 export const MainPage = () => {
@@ -11,7 +11,7 @@ export const MainPage = () => {
             <header className="header">
                 <NavBar />
             </header>
-            <main className="main">
+            <main className="main pt-5" >
                 <Outlet />
             </main>
             <footer className="footer">
