@@ -8,9 +8,9 @@ import cls from './post-item.module.css'
 import imgAvatar from "../../imgs/avatar.jpg"
 import { Link } from "react-router-dom";
 
-export const PostItem = ({ post, indexPost }) => {
+export const PostItem = ({ post }) => {
     return (
-        <Card key={post.id}>
+        <Card>
             <Card.Header >
                 <Link to={`/user/${post.userId}`}>
                     <div className={cls.avatar}>
@@ -20,10 +20,8 @@ export const PostItem = ({ post, indexPost }) => {
             </Card.Header>
             <Card.Body>
                 <Card.Title>{post.title}</Card.Title>
-                <Card.Text>
-                    {post.body}
-                </Card.Text>
-                <Comments post={post} index={indexPost} />
+                <Card.Text>{post.body}</Card.Text>
+                <Comments comment={post.comment} postId={post.id} />
             </Card.Body>
         </Card>
     )

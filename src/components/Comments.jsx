@@ -1,68 +1,41 @@
 import React from "react";
-import { Accordion, Button, Card, Stack, useAccordionButton } from "react-bootstrap";
+import { Accordion, Card, } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import Loader from "./Loader";
 import { getCommentsId } from "../store/postsSlice";
+import { CommentsList } from "./CommentsList";
+import { CommentsButton } from "./CommentsButton";
 
-export const Comments = ({ post }) => {
+export const Comments = ({ comment, postId }) => {
+
     const dispatch = useDispatch();
 
-    function CustomToggle({ children, eventKey, post }) {
-        const decoratedOnClick = useAccordionButton(eventKey, () => {
-            if (post.comment.comments.length === 0) dispatch(getCommentsId({ id: post.id }));
-        }
-        );
-
-        return (
-            <Button
-                type="button"
-                className='mb-3'
-                onClick={() => decoratedOnClick()}
-            >
-                {children}
-            </Button>
-        );
+    function getComments() {
+        if (comment.comments.length === 0) dispatch(getCommentsId({ id: postId }));
     }
 
     return (
         <Accordion >
-            <CustomToggle eventKey="0" post={post}>Go comments</CustomToggle>
+            <CommentsButton eventKey="0" callback={getComments}>Go comments</CommentsButton>
             <Accordion.Collapse eventKey="0">
                 <Card>
                     <Card.Body>
                         <Card.Title>Comments:</Card.Title>
 
                         {
-                            post.comment.status === 'loading' &&
+                            comment.status === 'loading' &&
                             <Loader />
                         }
 
-
                         {
-                            post.comment.status === 'succeeded' &&
-                            <Stack gap={2}>
-                                {
-                                    post.comment.comments.map((comment) => {
-                                        return (
-
-                                            <Card key={comment.id}>
-                                                <Card.Body>
-                                                    <Card.Title>{comment.email}</Card.Title>
-                                                    <Card.Text>{comment.body}</Card.Text>
-                                                </Card.Body>
-                                            </Card>
-                                        )
-                                    })
-                                }
-                            </Stack>
+                            comment.status === 'error' &&
+                            comment.comments
                         }
 
-
                         {
-                            post.comment.status === 'error' &&
-                            post.comment.comments
+                            comment.status === 'succeeded' &&
+                            <CommentsList comments={comment.comments} />
                         }
-
                     </Card.Body>
                 </Card>
             </Accordion.Collapse>

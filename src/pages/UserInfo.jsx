@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Loader from "../components/Loader";
-import { Button, Card, Container,  Stack } from "react-bootstrap";
+import { Button, Card, Container, Stack } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../store/postsSlice";
 import { UserCard } from "../components/UserCard";
@@ -19,6 +19,7 @@ export const UserInfo = () => {
     async function getUSer(id) {
         try {
             setUserInf({ isLoading: true });
+            await new Promise((resolve, reject) => setTimeout(resolve, 1000));
             let response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
             let data = await response.data;
             setUserInf({
@@ -58,15 +59,22 @@ export const UserInfo = () => {
             {
                 userInf?.name &&
                 <Stack gap={3}>
-                    <UserCard userInf={userInf} />
+                    <UserCard
+                        name={userInf.name}
+                        username={userInf.username}
+                        email={userInf.email}
+                        city={userInf.address.city}
+                        street={userInf.address.street}
+                        suite={userInf.address.suite}
+                        zipcode={userInf.address.zipcode}
+                        phone={userInf.phone}
+                    />
 
                     <Card>
                         <Card.Body>
                             <Card.Title>Посты пользователя</Card.Title>
 
-
                             <PostList posts={userPosts} />
-
 
                         </Card.Body>
                     </Card>
