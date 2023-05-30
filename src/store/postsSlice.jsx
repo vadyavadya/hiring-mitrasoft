@@ -12,7 +12,7 @@ export const getPosts = createAsyncThunk('posts/getPosts', async () => {
 })
 
 export const getCommentsId = createAsyncThunk('posts/getCommentsId', async ({ id }) => {
-
+    console.log(id);
     await new Promise((resolve, reject) => setTimeout(resolve, 1000));
     let res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
     return { data: res.data, id };

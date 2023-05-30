@@ -14,9 +14,9 @@ export const usePosts = (posts, query, sort) => {
 
     const searchAndSortPosts = useMemo(() => {
         return [...searchPost].sort((a, b) =>
-            +sort === 1 ?
+            sort === '1' ?
                 a.title.localeCompare(b.title) :
-                +sort === 2 ?
+                sort === '2' ?
                     b.title.localeCompare(a.title) :
                     0
         )

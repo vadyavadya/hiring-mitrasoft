@@ -11,7 +11,7 @@ export const MainPage = () => {
             <header className="header">
                 <NavBar />
             </header>
-            <main className="main pt-5" >
+            <main className="main pt-4" >
                 <Outlet />
             </main>
             <footer className="footer">

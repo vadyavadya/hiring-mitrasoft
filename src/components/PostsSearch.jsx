@@ -7,8 +7,8 @@ export const PostsSearch = ({ searchParams, setSearchParams }) => {
     function handelSubmit(event) {
         event.preventDefault();
         const query = event.target.search.value;
-        let params = {};
-        if (query.length) params.search = query;
+        let params = '';
+        if (query.length) params = query;
         setSearchParams(params);
     }
 
@@ -17,12 +17,12 @@ export const PostsSearch = ({ searchParams, setSearchParams }) => {
     }
 
     return (
-        <Form className="mb-3" onSubmit={handelSubmit}>
+        <Form onSubmit={handelSubmit}>
             <Row xs={1} md={2}>
                 <Col>
                     <Row>
                         <Col>
-                            <Form.Control type="text" name="search" value={search} onChange={e => setStateSearch(e.target.value)} placeholder="Поиск по заголовку" className="mb-3" />
+                            <Form.Control type="text" name="search" value={search} onChange={e => setStateSearch(e.target.value)} placeholder="Поиск по заголовку"/>
                         </Col>
                         <Col md="auto">
                             {
