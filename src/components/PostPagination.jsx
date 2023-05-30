@@ -7,7 +7,7 @@ export const PostPagination = ({ clsName, pageTotal, pageCurrent, setPageCurrent
     let pageArray = usePagination(pageTotal);
 
     return (
-        <Pagination className={clsName}>
+        <Pagination className={clsName + ' flex-wrap'}>
             {
                 pageArray.length > 1 &&
                 pageArray.map((number) =>

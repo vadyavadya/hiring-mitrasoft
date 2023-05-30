@@ -3,8 +3,8 @@ import { CloseButton, Col, Form, Row } from "react-bootstrap";
 
 export const Select = ({ value, setValue, defaultOption, defaultOptionValue, options, closeButton, label }) => {
     return (
-        <Row >
-            <Col xs="auto">
+        <Row xs={2}>
+            <Col xs={10} sm="auto">
                 {
                     label &&
                     <Form.Label>{label}</Form.Label>
@@ -20,7 +20,7 @@ export const Select = ({ value, setValue, defaultOption, defaultOptionValue, opt
                     }
                 </Form.Select>
             </Col>
-            <Col>
+            <Col xs={2}>
                 {
                     value !== defaultOptionValue &&
                     closeButton &&

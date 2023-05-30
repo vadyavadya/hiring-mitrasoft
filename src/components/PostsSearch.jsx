@@ -18,11 +18,11 @@ export const PostsSearch = ({ searchParams, setSearchParams }) => {
 
     return (
         <Form onSubmit={handelSubmit}>
-            <Row xs={1} md={2}>
+            <Row xs={1} md={2} className="row-gap-3">
                 <Col>
-                    <Row>
+                    <Row >
                         <Col>
-                            <Form.Control type="text" name="search" value={search} onChange={e => setStateSearch(e.target.value)} placeholder="Поиск по заголовку"/>
+                            <Form.Control type="text" name="search" value={search} onChange={e => setStateSearch(e.target.value)} placeholder="Поиск по заголовку" />
                         </Col>
                         <Col md="auto">
                             {
