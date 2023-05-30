@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiring-mitrasoft/static/css/main.1d640aa6.css",
-    "main.js": "/hiring-mitrasoft/static/js/main.8e1784d0.js",
+    "main.css": "/hiring-mitrasoft/static/css/main.f4d0ebb6.css",
+    "main.js": "/hiring-mitrasoft/static/js/main.65603bc1.js",
     "static/js/787.6da281ed.chunk.js": "/hiring-mitrasoft/static/js/787.6da281ed.chunk.js",
     "static/media/gerich.png": "/hiring-mitrasoft/static/media/gerich.6c75888bfd0e031e5961.png",
     "static/media/chritmas-tree.png": "/hiring-mitrasoft/static/media/chritmas-tree.84327abc4696dd65bc12.png",
@@ -11,12 +11,12 @@
     "static/media/avatar.jpg": "/hiring-mitrasoft/static/media/avatar.18577ef1ee0038912778.jpg",
     "static/media/for-rezume.jpg": "/hiring-mitrasoft/static/media/for-rezume.2ce2db06886a376a7992.jpg",
     "index.html": "/hiring-mitrasoft/index.html",
-    "main.1d640aa6.css.map": "/hiring-mitrasoft/static/css/main.1d640aa6.css.map",
-    "main.8e1784d0.js.map": "/hiring-mitrasoft/static/js/main.8e1784d0.js.map",
+    "main.f4d0ebb6.css.map": "/hiring-mitrasoft/static/css/main.f4d0ebb6.css.map",
+    "main.65603bc1.js.map": "/hiring-mitrasoft/static/js/main.65603bc1.js.map",
     "787.6da281ed.chunk.js.map": "/hiring-mitrasoft/static/js/787.6da281ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d640aa6.css",
-    "static/js/main.8e1784d0.js"
+    "static/css/main.f4d0ebb6.css",
+    "static/js/main.65603bc1.js"
   ]
 }
