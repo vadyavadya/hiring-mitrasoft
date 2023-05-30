@@ -19,7 +19,7 @@ export const PostItem = ({ post }) => {
                 </Link>
             </Card.Header>
             <Card.Body>
-                <Card.Title>{post.id} {post.title}</Card.Title>
+                <Card.Title>{post.title}</Card.Title>
                 <Card.Text>{post.body}</Card.Text>
                 <Comments comment={post.comment} postId={post.id} />
             </Card.Body>
