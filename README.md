@@ -1,6 +1,6 @@
 # Отклик на вакансию
 
-[ссылка на gh pages](https://vadyavadya.github.io/hiring-mitrasoft/)
+[ссылка на gh pages](https://vadyavadya.github.io/hiring-posts/)
 
 ## Для записка локально требуется
 
