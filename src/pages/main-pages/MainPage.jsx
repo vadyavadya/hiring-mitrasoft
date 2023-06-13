@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import './main-page.css'
+import './main-page.sass'
 import { NavBar } from "../../components/NavBar";
 
 
