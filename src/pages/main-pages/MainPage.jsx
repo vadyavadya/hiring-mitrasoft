@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import './main-page.sass'
-import { NavBar } from "../../components/NavBar";
+import { NavBar } from "../../components/navbar/NavBar";
 
 
 export const MainPage = () => {

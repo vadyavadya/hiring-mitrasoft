@@ -7,7 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-import ingAvat from "../imgs/my.jpg"
+import './navigation.sass'
+import ingAvat from "../../imgs/my.jpg"
 
 export const NavBar = () => {
 
