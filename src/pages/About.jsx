@@ -11,6 +11,7 @@ import imgChik from "../imgs/chik-chik.png";
 import imgTree from "../imgs/chritmas-tree.png";
 import imgFit from "../imgs/fitness.png";
 import imgGer from "../imgs/gerich.png";
+import imgBBurger from "../imgs/burger_delyvery.jpg"
 
 
 export const About = () => {
@@ -153,6 +154,12 @@ export const About = () => {
 
                             <Col>
                                 <a href="https://vadyavadya.github.io/christmas-trees" target="_blank" rel="noreferrer"><Image src={imgTree} rounded fluid alert="картинка сайта продажи елок" /></a>
+                            </Col>
+
+                        </Row>
+                        <Row xs={1} md={2} lg={4} className="mb-3">
+                            <Col>
+                                <a href="https://delivery-burger-react.vercel.app/" target="_blank" rel="noreferrer"><Image src={imgBBurger} rounded fluid alert="картинка сайта продажи елок" /></a>
                             </Col>
                         </Row>
 
