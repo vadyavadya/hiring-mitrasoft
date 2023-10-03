@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hiring-posts/static/css/main.f4d0ebb6.css",
-    "main.js": "/hiring-posts/static/js/main.c8389b2d.js",
+    "main.css": "/hiring-posts/static/css/main.2d7e4cdb.css",
+    "main.js": "/hiring-posts/static/js/main.bf371d21.js",
     "static/js/787.6da281ed.chunk.js": "/hiring-posts/static/js/787.6da281ed.chunk.js",
     "static/media/gerich.png": "/hiring-posts/static/media/gerich.6c75888bfd0e031e5961.png",
     "static/media/chritmas-tree.png": "/hiring-posts/static/media/chritmas-tree.84327abc4696dd65bc12.png",
@@ -9,14 +9,15 @@
     "static/media/fitness.png": "/hiring-posts/static/media/fitness.08997e38525eb46b924b.png",
     "static/media/my.jpg": "/hiring-posts/static/media/my.125969f26d2e127c27ae.jpg",
     "static/media/avatar.jpg": "/hiring-posts/static/media/avatar.18577ef1ee0038912778.jpg",
+    "static/media/burger_delyvery.jpg": "/hiring-posts/static/media/burger_delyvery.72312369d8ce4a8a5e47.jpg",
     "static/media/for-rezume.jpg": "/hiring-posts/static/media/for-rezume.2ce2db06886a376a7992.jpg",
     "index.html": "/hiring-posts/index.html",
-    "main.f4d0ebb6.css.map": "/hiring-posts/static/css/main.f4d0ebb6.css.map",
-    "main.c8389b2d.js.map": "/hiring-posts/static/js/main.c8389b2d.js.map",
+    "main.2d7e4cdb.css.map": "/hiring-posts/static/css/main.2d7e4cdb.css.map",
+    "main.bf371d21.js.map": "/hiring-posts/static/js/main.bf371d21.js.map",
     "787.6da281ed.chunk.js.map": "/hiring-posts/static/js/787.6da281ed.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f4d0ebb6.css",
-    "static/js/main.c8389b2d.js"
+    "static/css/main.2d7e4cdb.css",
+    "static/js/main.bf371d21.js"
   ]
 }
